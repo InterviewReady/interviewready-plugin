@@ -1,10 +1,11 @@
 {
   "name": "interviewready",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Interview prep for software engineers from InterviewReady: a dated plan up to your interview, questions picked at your level in coding, system design, behavioural and AI engineering, each one timed and graded on InterviewReady's server.",
   "author": {
     "name": "InterviewReady",
     "url": "https://interviewready.io"
   },
-  "homepage": "https://interviewready.io"
+  "homepage": "https://interviewready.io",
+  "license": "Proprietary"
 }

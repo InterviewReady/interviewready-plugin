@@ -60,7 +60,7 @@ Then ask Codex to start an interview prep plan.
 
 ## Your data
 
-The plugin signs in with your InterviewReady account. It stores your plan, your answers and their grades, the applications and debriefs you save, and the progress you choose to share. It never stores your resume, your code repositories or offer details: it reads your resume or git history on your machine only when you ask, and sends nothing from them unless you submit it as an answer. Ask it to delete your prep data and all of it goes at once.
+The plugin signs in with your InterviewReady account. It stores your plan, your answers and their grades, the applications and debriefs you save, and the progress you choose to share. The skills ask before reading your resume or git history. They instruct the assistant to keep offer details in the conversation. Content submitted as an answer, application note or debrief is stored by InterviewReady. Your host app also processes the conversation under its own privacy policy. Behavioural answers are sent to OpenAI for grading; submitted code runs on InterviewReady's code runner. Ask the plugin to delete your prep data to remove its plans, answers, applications, debriefs and shared snapshots. Your account and plugin sign-in remain.
 
 [Privacy policy](https://interviewready.io/privacy-policy) · [Terms](https://interviewready.io/tnc)
 

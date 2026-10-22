@@ -1,0 +1,12 @@
+{
+  "name": "interviewready",
+  "interface": { "displayName": "InterviewReady" },
+  "plugins": [
+    {
+      "name": "interviewready",
+      "source": { "source": "local", "path": "./plugins/interviewready" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Education"
+    }
+  ]
+}

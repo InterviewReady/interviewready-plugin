@@ -1,0 +1,15 @@
+{
+  "name": "interviewready",
+  "owner": {
+    "name": "InterviewReady",
+    "url": "https://interviewready.io"
+  },
+  "plugins": [
+    {
+      "name": "interviewready",
+      "source": "./plugins/interviewready",
+      "description": "Interview prep for software engineers from InterviewReady: a dated plan up to your interview, questions picked at your level in coding, system design, behavioural and AI engineering, each one timed and graded on InterviewReady's server."
+    }
+  ],
+  "description": "InterviewReady's interview prep plugin for Claude"
+}

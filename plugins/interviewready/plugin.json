@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "interviewready",
+  "version": "0.3.0",
+  "description": "Interview prep for software engineers from InterviewReady: a dated plan up to your interview, questions picked at your level in coding, system design, behavioural and AI engineering, each one timed and graded on InterviewReady's server.",
+  "author": {
+    "name": "InterviewReady",
+    "url": "https://interviewready.io"
+  },
+  "homepage": "https://interviewready.io",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "InterviewReady",
+        "shortDescription": "A dated interview plan, graded question by question",
+        "developerName": "InterviewReady",
+        "category": "Education",
+        "websiteURL": "https://interviewready.io",
+        "privacyPolicyURL": "https://interviewready.io/privacy-policy",
+        "longDescription": "InterviewReady plans your preparation day by day up to your interview date and serves one question at a time, near your level. Four rounds: coding problems run against hidden test cases; system design questions from the reference designs of InterviewReady's system design judge; behavioural questions graded against the rubric of InterviewReady's AI mock interviewer; and AI engineering questions from the adaptive assessment on aiengg.dev. Every answer is timed and graded on InterviewReady's server, so the score is the same in any app, and each answer sets the difficulty of the next. A comparison with other learners appears once 30 people have answered a question. It also finds open roles on public job boards (Greenhouse, Lever, Ashby), tracks your applications, debriefs real interviews and shares your progress behind a link anyone can check. Sign in with an InterviewReady account.",
+        "defaultPrompt": [
+          "Make me a prep plan for a senior backend interview in four weeks",
+          "Give me my next interview question",
+          "How am I doing in each round?"
+        ],
+        "capabilities": [
+          "Interactive",
+          "Read",
+          "Write"
+        ],
+        "termsOfServiceURL": "https://interviewready.io/tnc"
+      }
+    }
+  }
+}

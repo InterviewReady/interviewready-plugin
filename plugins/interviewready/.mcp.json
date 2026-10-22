@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "interviewready": {
+      "type": "http",
+      "url": "https://api.interviewready.io/api/utilities/prep-mcp"
+    }
+  }
+}

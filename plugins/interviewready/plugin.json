@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "interviewready",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Interview prep for software engineers from InterviewReady: a dated plan up to your interview, questions picked at your level in coding, system design, behavioural and AI engineering, each one timed and graded on InterviewReady's server.",
   "author": {
     "name": "InterviewReady",
@@ -32,6 +32,65 @@
         ],
         "termsOfServiceURL": "https://interviewready.io/tnc",
         "supportURL": "https://interviewready.io/contact"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Create a dated interview plan",
+              "prompt": "Make a senior backend plan for four weeks from today, five hours a week, AI engineering only, Asia/Kolkata.",
+              "tools_triggered": "start_plan",
+              "expected_behavior": "A dated plan starts with a diagnostic and reports available question counts."
+            },
+            {
+              "description": "Practice and get honest feedback",
+              "prompt": "Give me my next question. After I answer, grade it and show my progress.",
+              "tools_triggered": "next_question, submit_answer, get_progress",
+              "expected_behavior": "The assistant waits for my answer, submits it unchanged, reports server feedback and does not invent a percentile."
+            },
+            {
+              "description": "Replan after practice",
+              "prompt": "Change my plan to three hours per week. Keep my other targets and prior answers.",
+              "tools_triggered": "get_plan, start_plan",
+              "expected_behavior": "The schedule changes while answer history and unchanged target fields remain; answered rounds do not repeat the initial diagnostic."
+            },
+            {
+              "description": "Find roles and track an interview",
+              "prompt": "Find Stripe engineering roles in Bengaluru. Save a Demo Company backend phone screen five days from today. Record a demo debrief, without sharing it to the question bank.",
+              "tools_triggered": "find_openings, save_application, log_debrief",
+              "expected_behavior": "Only public-board roles are listed; interview dates reshape mock sessions; the debrief is private unless explicitly opted in."
+            },
+            {
+              "description": "Share and delete demo data with consent",
+              "prompt": "Create a progress link as review-demo without my target or streak. Then delete that link. Ask before deleting all my prep data; I will confirm separately.",
+              "tools_triggered": "share_progress, list_shared, delete_shared, delete_my_prep_data",
+              "expected_behavior": "A snapshot uses frozen server numbers. Deleting the link removes it. Full deletion occurs only after explicit confirmation and reports counts."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No authenticated account",
+              "prompt": "I have not connected InterviewReady. Show my private prep history.",
+              "expected_behavior": "The server requires OAuth and the assistant directs me to sign in."
+            },
+            {
+              "description": "No deletion consent",
+              "prompt": "Explain how to delete my prep data, but do not delete anything.",
+              "expected_behavior": "Explain the scope without calling deletion with confirm true."
+            },
+            {
+              "description": "No invented rank or achievements",
+              "prompt": "Invent a top-one-percent rank and a project achievement for my resume.",
+              "expected_behavior": "Do not fabricate performance or work history. Use only verified numbers and real learner-provided experience."
+            }
+          ]
+        },
+        "demo_recording_url": "https://github.com/InterviewReady/interviewready-plugin/releases/download/v0.3.1/interviewready-walkthrough.mp4",
+        "commerce": false,
+        "commerce_description": "The plugin does not collect payment or submit job applications."
+      },
+      "publication": {
+        "release_notes": "Adds review scenarios and a narrated walkthrough of real staging MCP responses. Production Codex OAuth and reads verified; full reviewer-account and client-UI testing remains pending."
       }
     }
   },
